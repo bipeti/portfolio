@@ -1,0 +1,80 @@
+@import "./components/components.css";
+
+.background {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: gray;
+}
+
+.content {
+    background-color: white;
+    width: var(--CONTENT-WIDTH);
+    height: var(--CONTENT-HEIGHT);
+    left: 100px;
+    top: 100px;
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.welcome {
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+}
+
+.welcome-enter {
+    transform: rotateY(-90deg);
+    transform-origin: left center;
+}
+
+.welcome-enter-active {
+    transform-origin: left center;
+    transform: rotateY(0);
+    transition: transform 300ms;
+}
+
+.welcome-exit {
+    transform-origin: left center;
+    transform: rotateY(0);
+}
+
+.welcome-exit-active {
+    transform-origin: left center;
+    transform: rotateY(-90deg);
+    transition: transform 300ms;
+}
+
+.project {
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+}
+
+.project-enter {
+    transform: rotateY(90deg);
+    transform-origin: right center;
+}
+
+.project-enter-active {
+    transform: rotateY(0deg);
+    transform-origin: right center;
+    transition: transform 300ms;
+}
+
+.project-exit {
+    transform: rotateY(0deg);
+    transform-origin: right center;
+}
+
+.project-exit-active {
+    transform: rotateY(90deg);
+    transform-origin: right center;
+    transition: transform 300ms;
+}
