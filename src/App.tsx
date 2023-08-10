@@ -4,6 +4,9 @@ import { CSSTransition } from "react-transition-group";
 import Calculator from "./components/Calculator";
 import Dictionary from "./components/Dictionary";
 import Pizzeria from "./components/Pizzeria";
+import Welcome from "./components/Welcome";
+import { TRANSITION_TIME } from "./tools/myConsts";
+import Portfolio from "./components/Portfolio";
 
 const App: React.FC = () => {
     const [showWelcome, setShowWelcome] = useState(true);
@@ -17,22 +20,27 @@ const App: React.FC = () => {
         calculator: <Calculator />,
         dictionary: <Dictionary />,
         pizzeria: <Pizzeria />,
+        portfolio: <Portfolio />,
     };
     const handleWelcomeButtonClick = () => {
         setShowProject(false);
         setTimeout(() => {
             setSelectedProject(null);
             setShowWelcome(true);
-        }, 300);
+        }, TRANSITION_TIME);
     };
 
-    const handleProjectButtonClick = (projectName: string) => {
+    const handleProjectButtonClick = (
+        event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+        projectName: string
+    ) => {
+        event.preventDefault();
         if (selectedProject === projectName) {
             setShowProject(false);
             setTimeout(() => {
                 setSelectedProject(null);
                 setShowWelcome(true);
-            }, 300);
+            }, TRANSITION_TIME);
         } else {
             setShowWelcome(false);
             setShowProject(false);
@@ -42,50 +50,114 @@ const App: React.FC = () => {
                     projectContent[projectName as keyof typeof projectContent]
                 );
                 setShowProject(true);
-            }, 300);
+            }, TRANSITION_TIME);
         }
     };
 
     return (
-        <div className="background">
-            <div className="content">
-                <CSSTransition
-                    in={showWelcome}
-                    timeout={300}
-                    classNames="welcome"
-                    key="welcome"
-                    unmountOnExit
-                >
-                    <div>
-                        Bihari Péter vagyok, frontend fejlesztő. <br />
-                        Gyerekkorom óta foglalkozom programozással. Korábbi
-                        tapasztalataim: Delphi, Interbase, PHP, MySQL. <br />
-                        Aktuálisan az alábbi nyelvekben vagyok naprakész:
-                        Javascript, Typescript, React. Ezekben a nyelvekben
-                        készültek az itt elérhető munkáim.
-                    </div>
-                </CSSTransition>
-                <CSSTransition
-                    in={showProject}
-                    timeout={300}
-                    classNames="project"
-                    key="project"
-                    unmountOnExit
-                >
-                    <div>{selectedProjectContent}</div>
-                </CSSTransition>
+        <div className="main">
+            <div className="header">
+                <img
+                    src="bp.png"
+                    alt="logo"
+                    onClick={handleWelcomeButtonClick}
+                />
             </div>
-            <div className="buttons">
-                <button onClick={handleWelcomeButtonClick}>Welcome</button>
-                <button onClick={() => handleProjectButtonClick("calculator")}>
-                    Számológép
-                </button>
-                <button onClick={() => handleProjectButtonClick("dictionary")}>
-                    Szótár
-                </button>
-                <button onClick={() => handleProjectButtonClick("pizzeria")}>
-                    Pizzéria
-                </button>
+            <div className="content-outer">
+                <div className="content">
+                    <span className="line-left"></span>
+                    <CSSTransition
+                        in={showWelcome}
+                        timeout={300}
+                        classNames="welcome"
+                        key="welcome"
+                        unmountOnExit
+                    >
+                        <Welcome />
+                    </CSSTransition>
+                    <CSSTransition
+                        in={showProject}
+                        timeout={300}
+                        classNames="project"
+                        key="project"
+                        unmountOnExit
+                    >
+                        <div>{selectedProjectContent}</div>
+                    </CSSTransition>
+                    <span className="line-bottom"></span>
+                </div>
+                <div className="project-main">
+                    <span className="line-top"></span>
+                    <div className="title">Projektek</div>
+                    <div className="projects">
+                        <a
+                            href="https://coolculator.netlify.app/"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            onClick={(event) =>
+                                handleProjectButtonClick(event, "calculator")
+                            }
+                        >
+                            Számológép
+                        </a>
+                        <a
+                            href="https://react-wordbook.netlify.app/"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            onClick={(event) =>
+                                handleProjectButtonClick(event, "dictionary")
+                            }
+                        >
+                            Angol egynyelvű szótár
+                        </a>
+                        <a
+                            href="https://ludas-pizzeria.netlify.app"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            onClick={(event) =>
+                                handleProjectButtonClick(event, "pizzeria")
+                            }
+                        >
+                            Pizzéria
+                        </a>
+                        <a
+                            href="https://bipeter.netlify.app/"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            onClick={(event) =>
+                                handleProjectButtonClick(event, "portfolio")
+                            }
+                        >
+                            Portfólió
+                        </a>
+                    </div>
+                    <span className="line-right"></span>
+                </div>
+            </div>
+            <div className="footer">
+                <a
+                    href="mailto:peter.bihari@gmail.com?subject=Mail from bipeter's site"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <img
+                        src="gmail.png"
+                        alt="gmail"
+                        // onClick={handleWelcomeButtonClick}
+                    />
+                </a>
+
+                <a
+                    href="https://github.com/bipeti"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <img
+                        src="github.png"
+                        alt="github"
+                        // onClick={handleWelcomeButtonClick}
+                    />
+                </a>
             </div>
         </div>
     );

@@ -1,80 +1,97 @@
 @import "./components/components.css";
+@import "./transitions.css";
 
-.background {
-    top: 0;
-    left: 0;
-    width: 100vw;
+.main {
+    max-width: 1080px;
     height: 100vh;
-    background-color: gray;
+    height: calc(100vh - 2rem);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: space-between;
+    margin: 1rem auto;
+    /* border: black 2px solid; */
+}
+
+.header {
+}
+
+.footer {
+    align-self: stretch;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header,
+.footer {
+    height: 70px;
+}
+
+.header,
+.footer img {
+    width: 32px;
+    cursor: pointer;
+}
+
+.header img:hover,
+.footer img:hover {
+    transform: scale(1.2);
+    /* box-shadow: white 2px 2px 20px; */
+}
+
+.content-outer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    gap: 10px;
 }
 
 .content {
-    background-color: white;
-    width: var(--CONTENT-WIDTH);
-    height: var(--CONTENT-HEIGHT);
-    left: 100px;
-    top: 100px;
-    position: absolute;
+    min-width: var(--CONTENT-MIN-WIDTH);
+    min-height: var(--CONTENT-MIN-HEIGHT);
+    flex: 2;
     display: flex;
-    flex-flow: column;
-    justify-content: stretch;
-    align-items: stretch;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* border: black 2px solid; */
+    position: relative;
 }
 
-.welcome {
-    width: 100%;
-    display: block;
-    position: absolute;
-    left: 0;
+.project-main {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
 }
 
-.welcome-enter {
-    transform: rotateY(-90deg);
-    transform-origin: left center;
+.projects {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2rem;
+    padding: 0 0 2rem 2rem;
+    flex: 1;
 }
 
-.welcome-enter-active {
-    transform-origin: left center;
-    transform: rotateY(0);
-    transition: transform 300ms;
+a {
+    text-underline-offset: 5px;
+    color: lightgray;
+    text-decoration-color: rgb(192, 164, 5);
 }
 
-.welcome-exit {
-    transform-origin: left center;
-    transform: rotateY(0);
+a:hover,
+a:active {
+    color: white;
+    text-shadow: white 2px 2px 20px;
+    transform: scale(1.1);
 }
 
-.welcome-exit-active {
-    transform-origin: left center;
-    transform: rotateY(-90deg);
-    transition: transform 300ms;
-}
-
-.project {
-    width: 100%;
-    display: block;
-    position: absolute;
-    left: 0;
-}
-
-.project-enter {
-    transform: rotateY(90deg);
-    transform-origin: right center;
-}
-
-.project-enter-active {
-    transform: rotateY(0deg);
-    transform-origin: right center;
-    transition: transform 300ms;
-}
-
-.project-exit {
-    transform: rotateY(0deg);
-    transform-origin: right center;
-}
-
-.project-exit-active {
-    transform: rotateY(90deg);
-    transform-origin: right center;
-    transition: transform 300ms;
+.projects a {
+    margin: 1rem 0;
 }

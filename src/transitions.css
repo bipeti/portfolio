@@ -1,0 +1,141 @@
+/* welcome */
+
+.welcome,
+.project {
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+}
+
+.welcome-enter {
+    transform: rotateY(-90deg);
+    transform-origin: left center;
+    height: 100%;
+    width: 100%;
+}
+
+.welcome-enter-active {
+    transform-origin: left center;
+    transform: rotateY(0);
+    transition: transform var(--TRANSITIONS-TIME);
+    height: 100%;
+    width: 100%;
+}
+
+.welcome-exit {
+    transform-origin: left center;
+    transform: rotateY(0);
+    height: 100%;
+    width: 100%;
+}
+
+.welcome-exit-active {
+    transform-origin: left center;
+    transform: rotateY(-90deg);
+    transition: transform var(--TRANSITIONS-TIME);
+    height: 100%;
+    width: 100%;
+}
+
+/* project */
+
+.project-enter {
+    transform: rotateY(90deg);
+    transform-origin: right center;
+    height: 100%;
+    width: 100%;
+}
+
+.project-enter-active {
+    transform: rotateY(0deg);
+    transform-origin: right center;
+    transition: transform var(--TRANSITIONS-TIME);
+    height: 100%;
+    width: 100%;
+}
+
+.project-enter-done,
+.welcome-enter-done {
+    height: 100%;
+    width: 100%;
+}
+
+.project-exit {
+    transform: rotateY(0deg);
+    transform-origin: right center;
+    height: 100%;
+    width: 100%;
+}
+
+.project-exit-active {
+    transform: rotateY(90deg);
+    transform-origin: right center;
+    transition: transform var(--TRANSITIONS-TIME);
+    height: 100%;
+    width: 100%;
+}
+
+/* lines */
+
+.line-left {
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: -0.5rem;
+    height: 50%;
+    width: 2px;
+    background-color: var(--COLOR-4);
+    animation: appear-vertical 2000ms ease-out;
+}
+
+.line-bottom {
+    position: absolute;
+    content: " ";
+    bottom: -0.5rem;
+    right: 0;
+    height: 2px;
+    width: 50%;
+    background-color: var(--COLOR-2);
+    animation: appear-horizontal 2000ms ease-out;
+}
+
+.line-top {
+    position: absolute;
+    content: " ";
+    top: -0.5rem;
+    left: 0;
+    height: 2px;
+    width: 50%;
+    background-color: var(--COLOR-1);
+    animation: appear-horizontal 2000ms ease-out;
+}
+
+.line-right {
+    position: absolute;
+    content: " ";
+    right: -0.5rem;
+    bottom: 0;
+    width: 2px;
+    height: 50%;
+    background-color: var(--COLOR-3);
+    animation: appear-vertical 2000ms ease-out;
+}
+
+@keyframes appear-vertical {
+    from {
+        height: 0;
+    }
+    to {
+        height: 50%;
+    }
+}
+
+@keyframes appear-horizontal {
+    from {
+        width: 0;
+    }
+    to {
+        width: 50%;
+    }
+}
