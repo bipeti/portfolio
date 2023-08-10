@@ -32,13 +32,37 @@ code {
 }
 
 * {
-    --CONTENT-MIN-WIDTH: 350px;
-    --CONTENT-MIN-HEIGHT: 410px;
+    --CONTENT-MIN-WIDTH: 450px;
+    --CONTENT-MIN-HEIGHT: 450px;
+    --PROJECT-MIN-WIDTH: 250px;
     --TRANSITIONS-TIME: 300ms;
     --BACKGROUND-COLOR: #202124;
     --FIRST-COLOR: #a0a0a0;
-    --COLOR-1: rgb(189, 2, 2);
-    --COLOR-2: rgb(26, 26, 242);
-    --COLOR-3: rgb(2, 189, 2);
-    --COLOR-4: rgb(192, 206, 42);
+    --SECOND-COLOR: white;
+    --LINK-COLOR: lightgray;
+    --LINK-UNDERLINE-COLOR: #c0a405;
+    --COLOR-1: #bd0202;
+    --COLOR-2: #c0ce2a;
+    --COLOR-3: #02bd02;
+    --COLOR-4: #1a1af2;
+    --DESCRIPTION-PADDING: 0 2rem;
+    --OFFSET: -0.5rem;
+}
+
+@media (max-width: 390px) {
+    * {
+        --DESCRIPTION-PADDING: 0 0.5rem;
+    }
+}
+
+@media (min-width: 450px) {
+    * {
+        --CONTENT-MIN-HEIGHT: 400px;
+    }
+}
+
+@media (min-width: 550px) {
+    * {
+        --CONTENT-MIN-HEIGHT: 350px;
+    }
 }

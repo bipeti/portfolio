@@ -9,11 +9,16 @@
     flex-flow: column nowrap;
     align-items: stretch;
     justify-content: space-between;
-    margin: 1rem auto;
+    margin: 0 auto;
+    padding: 1rem;
     /* border: black 2px solid; */
 }
 
 .header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .footer {
@@ -21,7 +26,7 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     gap: 1rem;
 }
 
@@ -30,7 +35,11 @@
     height: 70px;
 }
 
-.header,
+.header img {
+    width: 64px;
+    cursor: pointer;
+}
+
 .footer img {
     width: 32px;
     cursor: pointer;
@@ -39,12 +48,11 @@
 .header img:hover,
 .footer img:hover {
     transform: scale(1.2);
-    /* box-shadow: white 2px 2px 20px; */
 }
 
 .content-outer {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: space-around;
     gap: 10px;
 }
@@ -57,13 +65,12 @@
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: flex-start;
-    /* border: black 2px solid; */
     position: relative;
 }
 
 .project-main {
     flex: 1;
-    min-width: 250px;
+    min-width: var(--PROJECT-MIN-WIDTH);
     display: flex;
     flex-flow: column nowrap;
     position: relative;
@@ -74,24 +81,43 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-start;
-    padding-left: 2rem;
-    padding: 0 0 2rem 2rem;
-    flex: 1;
+    padding: 0 0 0 2rem;
 }
 
 a {
     text-underline-offset: 5px;
-    color: lightgray;
-    text-decoration-color: rgb(192, 164, 5);
+    color: var(--LINK-COLOR);
+    text-decoration-color: var(--LINK-UNDERLINE-COLOR);
 }
 
 a:hover,
 a:active {
-    color: white;
-    text-shadow: white 2px 2px 20px;
+    color: var(--SECOND-COLOR);
+    text-shadow: var(--SECOND-COLOR) 2px 2px 20px;
     transform: scale(1.1);
 }
 
 .projects a {
     margin: 1rem 0;
+}
+
+@media (max-width: 730px) {
+    .content-outer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .content,
+    .project-main {
+        flex: none;
+        min-width: auto;
+    }
+
+    .projects a {
+        margin: 0.1rem 0;
+    }
+
+    .header img {
+        width: 32px;
+    }
 }

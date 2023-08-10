@@ -66,6 +66,8 @@ const App: React.FC = () => {
             <div className="content-outer">
                 <div className="content">
                     <span className="line-left"></span>
+                    <span className="line-top"></span>
+
                     <CSSTransition
                         in={showWelcome}
                         timeout={300}
@@ -84,10 +86,8 @@ const App: React.FC = () => {
                     >
                         <div>{selectedProjectContent}</div>
                     </CSSTransition>
-                    <span className="line-bottom"></span>
                 </div>
                 <div className="project-main">
-                    <span className="line-top"></span>
                     <div className="title">Projektek</div>
                     <div className="projects">
                         <a
@@ -131,6 +131,7 @@ const App: React.FC = () => {
                             Portfólió
                         </a>
                     </div>
+                    <span className="line-bottom"></span>
                     <span className="line-right"></span>
                 </div>
             </div>

@@ -81,50 +81,55 @@
 .line-left {
     position: absolute;
     content: " ";
-    top: 0;
-    left: -0.5rem;
-    height: 50%;
+    top: var(--OFFSET);
+    left: var(--OFFSET);
+    /* height: 50%; */
     width: 2px;
-    background-color: var(--COLOR-4);
-    animation: appear-vertical 2000ms ease-out;
+    /* background-color: var(--COLOR-4); */
+    background: linear-gradient(var(--COLOR-4), VAR(--COLOR-2));
+    animation: appear-vertical 2s ease-out forwards;
 }
 
 .line-bottom {
     position: absolute;
     content: " ";
-    bottom: -0.5rem;
-    right: 0;
+    bottom: var(--OFFSET);
+    left: calc(50% - var(--OFFSET));
     height: 2px;
-    width: 50%;
-    background-color: var(--COLOR-2);
-    animation: appear-horizontal 2000ms ease-out;
-}
-
-.line-top {
-    position: absolute;
-    content: " ";
-    top: -0.5rem;
-    left: 0;
-    height: 2px;
-    width: 50%;
-    background-color: var(--COLOR-1);
-    animation: appear-horizontal 2000ms ease-out;
+    /* width: 50%; */
+    /* background-color: var(--COLOR-2); */
+    background: linear-gradient(to right, VAR(--COLOR-2), var(--COLOR-3));
+    animation: appear-horizontal 2s 2s ease-out forwards;
 }
 
 .line-right {
     position: absolute;
     content: " ";
-    right: -0.5rem;
-    bottom: 0;
+    right: var(--OFFSET);
+    bottom: var(--OFFSET);
     width: 2px;
-    height: 50%;
-    background-color: var(--COLOR-3);
-    animation: appear-vertical 2000ms ease-out;
+    /* height: 50%; */
+    /* background-color: var(--COLOR-3); */
+    background: linear-gradient(0deg, var(--COLOR-3), VAR(--COLOR-1));
+    animation: appear-vertical 2s 4s ease-out forwards;
+}
+
+.line-top {
+    position: absolute;
+    content: " ";
+    top: var(--OFFSET);
+    right: calc(50% - var(--OFFSET));
+    height: 2px;
+    /* width: 50%; */
+    /* background-color: var(--COLOR-1); */
+    background: linear-gradient(to left, var(--COLOR-1), VAR(--COLOR-4));
+
+    animation: appear-horizontal 2s 6s ease-out forwards;
 }
 
 @keyframes appear-vertical {
     from {
-        height: 0;
+        height: 0px;
     }
     to {
         height: 50%;

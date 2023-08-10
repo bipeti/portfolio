@@ -14,7 +14,7 @@
 .description {
     display: flex;
     flex-flow: column nowrap;
-    padding: 0 2rem;
+    padding: var(--DESCRIPTION-PADDING);
     text-align: justify;
 }
 
@@ -26,13 +26,13 @@
 }
 
 .links a {
-    color: lightgray;
+    color: var(--LINK-COLOR);
 }
 
 .links a:hover,
 .links a:active {
-    color: white;
-    text-shadow: white 2px 2px 20px;
+    color: var(--SECOND-COLOR);
+    text-shadow: var(--SECOND-COLOR) 2px 2px 20px;
 }
 
 .modules ul {
@@ -49,7 +49,6 @@
     padding: 0 0.8rem;
     border-radius: 15px;
     line-height: 1.8rem;
-    border: 2px solid rgb(189, 2, 2);
 }
 
 .modules .javascript,
