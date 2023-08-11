@@ -9,9 +9,8 @@ export default function Welcome() {
                 számos különféle programozási nyelvet tanultam. A Delphi-t és az
                 SQL-t még tantermi keretek között ismertem meg, később a PHP-t
                 és a MySQL-t autodidakta módon sajátítottam el. <br />
-                Jelenleg elsősorban Javascript és Typescript nyelvekkel
-                dolgozom, valamint React-ot használok a felhasználói felületek
-                készítéséhez.
+                Jelenleg elsősorban a Javascript és Typescript nyelveket,
+                valamint a React-ot használom.
             </div>
             <div className="links">
                 <a

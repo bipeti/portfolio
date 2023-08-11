@@ -33,7 +33,7 @@ code {
 
 * {
     --CONTENT-MIN-WIDTH: 450px;
-    --CONTENT-MIN-HEIGHT: 450px;
+    --CONTENT-MIN-HEIGHT: 415px;
     --PROJECT-MIN-WIDTH: 250px;
     --TRANSITIONS-TIME: 300ms;
     --BACKGROUND-COLOR: #202124;
@@ -49,7 +49,7 @@ code {
     --OFFSET: -0.5rem;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 450px) {
     * {
         --DESCRIPTION-PADDING: 0 0.5rem;
     }

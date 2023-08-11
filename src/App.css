@@ -55,6 +55,7 @@
     flex-flow: row nowrap;
     justify-content: space-around;
     gap: 10px;
+    padding: 0.7rem 0;
 }
 
 .content {
@@ -99,6 +100,12 @@ a:active {
 
 .projects a {
     margin: 1rem 0;
+}
+
+@media (max-width: 450px) {
+    .main {
+        padding: 0 1rem;
+    }
 }
 
 @media (max-width: 730px) {
