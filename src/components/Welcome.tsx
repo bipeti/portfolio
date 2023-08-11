@@ -4,13 +4,13 @@ export default function Welcome() {
             <div className="title">Bemutatkozás</div>
             <div className="description">
                 Bihari Péter vagyok, frontend fejlesztő. <br />
-                <br />
                 Gyerekkorom óta foglalkozom programozással és az évek során
-                számos különféle programozási nyelvet tanultam. A Delphi-t és az
-                SQL-t még tantermi keretek között ismertem meg, később a PHP-t
-                és a MySQL-t autodidakta módon sajátítottam el. <br />
+                számos különféle programozási nyelvet ismertem meg és
+                használtam: Turbo Pascal, Delphi, SQL, Unix Bash, Windows
+                Powershell, AutoHotkey, PHP, MySQL, HTML, CSS. <br />
                 Jelenleg elsősorban a Javascript és Typescript nyelveket,
-                valamint a React-ot használom.
+                valamint a React könyvtárat használom, az oldalon elérhető
+                projektek is ezekkel készültek.
             </div>
             <div className="links">
                 <a

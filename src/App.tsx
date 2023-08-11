@@ -141,11 +141,7 @@ const App: React.FC = () => {
                     target="_blank"
                     rel="noreferrer noopener"
                 >
-                    <img
-                        src="gmail.png"
-                        alt="gmail"
-                        // onClick={handleWelcomeButtonClick}
-                    />
+                    <img src="gmail.png" alt="gmail" />
                 </a>
 
                 <a
@@ -153,11 +149,15 @@ const App: React.FC = () => {
                     target="_blank"
                     rel="noreferrer noopener"
                 >
-                    <img
-                        src="github.png"
-                        alt="github"
-                        // onClick={handleWelcomeButtonClick}
-                    />
+                    <img src="github.png" alt="github" />
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/peter-bihari"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                >
+                    <img src="linkedin.png" alt="linkedin" />
                 </a>
             </div>
         </div>
