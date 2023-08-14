@@ -6,8 +6,8 @@ export default function Welcome() {
                 Bihari Péter vagyok, frontend fejlesztő. <br />
                 Gyerekkorom óta foglalkozom programozással és az évek során
                 számos különféle programozási nyelvet ismertem meg és
-                használtam: Turbo Pascal, Delphi, SQL, Unix Bash, Windows
-                Powershell, AutoHotkey, PHP, MySQL, HTML, CSS. <br />
+                használtam: Delphi, SQL, Unix Bash, Windows Powershell,
+                AutoHotkey, PHP, MySQL, HTML, CSS. <br />
                 Jelenleg elsősorban a Javascript és Typescript nyelveket,
                 valamint a React könyvtárat használom, az oldalon elérhető
                 projektek is ezekkel készültek.
