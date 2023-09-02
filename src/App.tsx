@@ -90,7 +90,7 @@ const App: React.FC = () => {
                 <div className="project-main">
                     <div className="title">Projektek</div>
                     <div className="projects">
-                        <a
+                        {/* <a
                             href="https://coolculator.netlify.app/"
                             target="_blank"
                             rel="noreferrer noopener"
@@ -99,7 +99,7 @@ const App: React.FC = () => {
                             }
                         >
                             Számológép
-                        </a>
+                        </a> */}
                         <a
                             href="https://react-wordbook.netlify.app/"
                             target="_blank"
